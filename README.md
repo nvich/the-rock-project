@@ -5,7 +5,9 @@
 
 ## Summary 
 
-- [Diet](diet.md)
+- Diet
+  - [Nutritional facts](nutritional-facts.md)
+  - [Schedules](schedules.md)
 
 ## Contributing
 
