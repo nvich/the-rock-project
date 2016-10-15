@@ -1,31 +1,46 @@
 # Diet 
 
-## 8:00
+## Informações
+
+### 1 clara de ovo
+
+- 3,6g de proteína
+- 0,24g de carboidratos
+- 55 mg de sódio
+- 17 calorias
+
+### 1 gema de ovo
+
+- 2,7g de proteínas
+
+## Horários
+
+### 8:00
 
 - 7 claras de ovos
 - 4 ovos inteiros
 - 3 colheres (de sopa) de aveia
 
-## 12:00
+### 12:00
 
 - Salada de folhas verdes
 - 250 gramas de proteínas (Peito de frango grelhado, assado ou cozido)
 - 1 porção de 80 gramas de castanha do Pará
 - 500 mg de Óleo de Prímula
 
-## 15:00
+### 15:00
 
 - Salada de folhas verdes
 - 250 gramas de carboidrato (preferencialmente arroz)
 - 350 gramas de proteínas (filé de carne vermelha)
 
-## 18:00
+### 18:00
 
 - Salada de folhas com brócolis
 - 200 gramas de carboidrato (preferencialmente arroz)
 - 300 gramas de proteínas (Peito de frango grelhado, assado ou cozido)
 
-## Ceia
+### Ceia
 
 - 120 gramas de sopa de abacate
 - 9 claras de ovos
