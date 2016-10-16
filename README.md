@@ -7,7 +7,7 @@
 
 - Diet
   - Foods
-    - [Broccoli](broccoli.md)
+    - [Broccoli](foods/broccoli.md)
   - [Nutritional facts](nutritional-facts.md)
   - [Schedules](schedules.md)
 
