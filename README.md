@@ -6,6 +6,8 @@
 ## Summary 
 
 - Diet
+  - Foods
+    - [Broccoli](broccoli.md)
   - [Nutritional facts](nutritional-facts.md)
   - [Schedules](schedules.md)
 
