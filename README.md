@@ -3,13 +3,13 @@
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
 [![issues](https://img.shields.io/github/issues/hemersonvianna/the-rock-project.svg?style=flat-square)](https://github.com/hemersonvianna/the-rock-project/issues)
 
-## Summary 
+## Documentation
 
-- [Diet](diet.md)
+- [Diet](doc/diet.md)
   - Foods
-    - [Broccoli](foods/broccoli.md)
-  - [Nutritional facts](nutritional-facts.md)
-  - [Schedules](schedules.md)
+    - [Broccoli](doc/foods/broccoli.md)
+  - [Nutritional facts](doc/nutritional-facts.md)
+  - [Schedules](doc/schedules.md)
 
 ## References
 
