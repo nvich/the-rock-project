@@ -1,0 +1,25 @@
+{
+  "name": "the-rock-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hemersonvianna/the-rock-project.git"
+  },
+  "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (http://descco.com.br)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hemersonvianna/the-rock-project/issues"
+  },
+  "homepage": "https://github.com/hemersonvianna/the-rock-project#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
