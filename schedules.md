@@ -1,5 +1,6 @@
 # Horários
 
+- 2.726,4 calorias
 - 204,45g de proteínas
 - 340,75g de carboidratos
 - 60,57g de gorduras
