@@ -46,3 +46,34 @@
 - 3,57g de gorduras
 - 85mg de colesterol
 - 165 calorias
+
+## Arroz branco cozido (100g)
+
+- 2,5g de proteína
+- 28,18g de carboidratos
+- 365mg de sódio
+- 30mg de potássio
+- 0,23g de gorduras
+- 0mg de colesterol
+- 129 calorias
+
+## Abacate (100g)
+
+- 2g de proteína
+- 8,53g de carboidratos
+- 7mg de sódio
+- 485mg de potássio
+- 14,66g de gorduras
+- 0mg de colesterol
+- 160 calorias
+
+## Batata-Doce sem Casca, Cozido, Fervido (100%)
+
+- 1,37g de proteína
+- 17,72g de carboidratos
+- 27mg de sódio
+- 230mg de potássio
+- 0,14g de gorduras
+- 0mg de colesterol
+- 2,5g de fibras
+- 76 calorias
