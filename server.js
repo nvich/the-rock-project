@@ -3,7 +3,7 @@ const bodyParser= require('body-parser');
 const app = express();
 const MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://localhost:27017/foods', (err, database) => {
+MongoClient.connect('mongodb://localhost:27017/the-rock', (err, database) => {
   if (err) {
     return console.log(err);
   }
