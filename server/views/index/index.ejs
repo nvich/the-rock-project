@@ -20,10 +20,23 @@
     <% } %>
     </ul>
 
-    <form action="/foods" method="POST">
-      <input type="text" placeholder="name" name="name">
-      <input type="text" placeholder="food" name="food">
-      <button type="submit">Submit</button>
-    </form>
+    <div id="app"></div>
+
+    <script type="text/x-template" id="demo-template">
+      <div>
+        <p>Selected: {{ selected }}</p>
+        <select2 :options="options" v-model="selected">
+          <option disabled value="0">Select one</option>
+        </select2>
+      </div>
+    </script>
+
+    <script type="text/x-template" id="select2-template">
+      <select>
+        <slot></slot>
+      </select>
+    </script>
+
+    <script src="/static/js/scripts.min.js"></script>
   </body>
 </html>

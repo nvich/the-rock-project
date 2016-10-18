@@ -14,6 +14,8 @@ MongoClient.connect('mongodb://localhost:27017/the-rock', (err, database) => {
   })
 })
 
+app.use('/static', express.static(__dirname + '/public'));
+
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'ejs');
 
