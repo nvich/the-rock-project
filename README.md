@@ -3,6 +3,22 @@
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
 [![issues](https://img.shields.io/github/issues/hemersonvianna/the-rock-project.svg?style=flat-square)](https://github.com/hemersonvianna/the-rock-project/issues)
 
+## Install
+
+```bash
+npm install
+```
+
+## Usage
+
+```bash 
+mongod
+```
+
+```bash
+node server
+```
+
 ## Documentation
 
 - [Diet](doc/diet.md)

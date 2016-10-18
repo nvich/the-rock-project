@@ -12,9 +12,9 @@
     </script>
   </head>
   <body>
-    <ul class="quotes">
-    <% for(var i=0; i<foods.length; i++) {%>
-      <li class="quote">
+    <ul class="foods">
+    <% for(var i = 0, len = foods.length; i < len; i++) {%>
+      <li class="food">
         <span><%= foods[i].name %></span>
       </li>
     <% } %>
