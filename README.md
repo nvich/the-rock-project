@@ -15,6 +15,11 @@ npm install
 mongod
 ```
 
+```bash 
+mongo 
+mongoimport --db the-rock --collection foods --file ./data/the-rock/foods.json
+```
+
 ```bash
 node server
 ```
