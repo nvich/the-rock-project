@@ -1,32 +1,45 @@
-const express = require('express');
-const bodyParser= require('body-parser');
-const app = express();
-const MongoClient = require('mongodb').MongoClient;
+const express         = require('express');
+const mongoose        = require('mongoose');
+const bodyParser      = require('body-parser');
+const passport        = require('passport');
+const cookieParser    = require('cookie-parser');
+const methodOverride  = require('method-override');
+const cors            = require('cors');
+const app             = express();
 
-MongoClient.connect('mongodb://localhost:27017/the-rock', (err, database) => {
-  if (err) {
-    return console.log(err);
-  }
+// ENVIRONMENT CONFIG
+const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const envConfig = require('./server/env')[env];
 
-  db = database;
-  app.listen(3000, () => {
-    console.log('listening on 3000');
-  })
-})
+mongoose.connect(envConfig.db);
 
-app.use('/static', express.static(__dirname + '/public'));
+// PASSPORT CONFIG
+require('./server/passport')(passport);
+
+// EXPRESS CONFIG
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(methodOverride());
+app.use(cookieParser());
 
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use('/static', express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-  db.collection('foods').find().toArray((err, result) => {
-    if (err) {
-      return console.log(err);
-    }
 
-    res.render('index/index.ejs', {foods: result})
-  })
-})
+// ROUTES
+require('./server/routes')(app, passport);
+
+// Start server
+app.listen(envConfig.port, function(){
+  console.log('Server listening on port ' + envConfig.port)
+});
