@@ -1,8 +1,7 @@
 const User = require('../models/user');
 
-// Posts API
-module.exports = function(router){
-
+// Users API
+module.exports = (router) => {
   // get all users
   router.get('/users', function(req, res){
     User.find({}, function(err, users){
@@ -72,4 +71,4 @@ module.exports = function(router){
       res.json({ message: 'User deletado' });
     })
   });
-};
+}

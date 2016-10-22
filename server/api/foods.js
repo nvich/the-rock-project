@@ -1,8 +1,7 @@
-const Food = require('../models/food');
+const Food    = require('../models/food');
 
 // Foods API
 module.exports = (router) => {
-
   // get all foods
   router.get('/foods', (req, res) => {
     Food.find({}, (err, foods) => {
@@ -81,4 +80,4 @@ module.exports = (router) => {
       res.json({ message: 'Food deletado' });
     })
   });
-};
+}

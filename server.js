@@ -7,7 +7,6 @@ const methodOverride  = require('method-override');
 const cors            = require('cors');
 
 const app             = express();
-const router          = express.Router();
 
 // ENVIRONMENT CONFIG
 const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -38,9 +37,18 @@ app.use(passport.session());
 app.use('/static', express.static(__dirname + '/public'));
 
 // ROUTES
-require('./server/routes/index')(app);
-require('./server/routes/admin')(app);
-require('./server/routes/api')(app);
+const router      = require('./server/routes/index');
+const adminRouter = require('./server/routes/admin');
+const apiRouter   = require('./server/routes/api');
+
+app.use('/', router);
+app.use('/api', apiRouter);
+app.use('/', adminRouter);
+
+app.use((req, res, next) => {
+  res.status(404);
+  res.render('404/index');
+});
 
 // Start server
 app.listen(envConfig.port, function(){
