@@ -3,7 +3,6 @@ const router  = express.Router();
 
 module.exports = (app) => {
   app.use('/', router);
-
   // home route
   router.get('/', (req, res) => {
     res.render('index/index');

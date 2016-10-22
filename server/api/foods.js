@@ -1,11 +1,11 @@
 const Food = require('../models/food');
 
-// Posts API
-module.exports = function(apiRouter){
+// Foods API
+module.exports = (router) => {
 
   // get all foods
-  apiRouter.get('/foods', function(req, res){
-    Food.find({}, function(err, foods){
+  router.get('/foods', (req, res) => {
+    Food.find({}, (err, foods) => {
       if (err) {
         res.send(err);
       }
@@ -14,10 +14,8 @@ module.exports = function(apiRouter){
   });
 
   // add a post
-  apiRouter.post('/foods', function(req, res){
+  router.post('/foods', (req, res) => {
     const food = new Food();
-    food.title = req.body.title;
-    food.body = req.body.body;
 
     food.name         = req.body.name;
     food.amount       = req.body.amount;
@@ -29,7 +27,7 @@ module.exports = function(apiRouter){
     food.potassium    = req.body.potassium;
     food.cholesterol  = req.body.cholesterol;
 
-    food.save(function(err, food){
+    food.save((err, food) => {
       if(err) {
         res.send(err);
       }
@@ -38,8 +36,8 @@ module.exports = function(apiRouter){
   });
 
   // get a single food
-  apiRouter.get('/foods/:id', function(req, res){
-    Food.findById(req.params.id, function(err, food){
+  router.get('/foods/:id', (req, res) => {
+    Food.findById(req.params.id, (err, food) => {
       if (err) {
         res.send(err);
       }
@@ -48,8 +46,8 @@ module.exports = function(apiRouter){
   });
 
   // update a food
-  apiRouter.put('/foods/:id', function(req, res){
-    Food.findById(req.params.id, function(err, food){
+  router.put('/foods/:id', (req, res) => {
+    Food.findById(req.params.id, (err, food) => {
       if(err) {
         res.send(err);
       }
@@ -63,7 +61,7 @@ module.exports = function(apiRouter){
       food.potassium    = req.body.potassium;
       food.cholesterol  = req.body.cholesterol;
 
-      food.save(function(err){
+      food.save((err) => {
         if(err) {
           res.send(err);
         }
@@ -73,10 +71,10 @@ module.exports = function(apiRouter){
   });
 
   // delete a food
-  apiRouter.delete('/foods/:id', function(req, res){
+  router.delete('/foods/:id', (req, res) =>{
     Food.remove({
       _id: req.params.id
-    }, function(err, food){
+    }, (err, food) => {
       if(err) {
         res.send(err);
       }

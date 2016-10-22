@@ -7,6 +7,7 @@ const methodOverride  = require('method-override');
 const cors            = require('cors');
 
 const app             = express();
+const router          = express.Router();
 
 // ENVIRONMENT CONFIG
 const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -15,7 +16,7 @@ const envConfig = require('./server/env')[env];
 mongoose.connect(envConfig.db);
 
 // PASSPORT CONFIG
-require('./server/passport')(passport);
+require('./server/passport');
 
 // EXPRESS CONFIG
 app.use(bodyParser.json());
@@ -36,10 +37,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/static', express.static(__dirname + '/public'));
 
-
 // ROUTES
 require('./server/routes/index')(app);
-require('./server/routes/admin')(app, passport);
+require('./server/routes/admin')(app);
 require('./server/routes/api')(app);
 
 // Start server

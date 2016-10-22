@@ -1,12 +1,10 @@
-// requires the model with Passport-Local Mongoose plugged in
+const passport      = require('passport');
 const User          = require('./models/user');
 const LocalStrategy = require('passport-local').Strategy;
 
-module.exports = function(passport){
-  // use static authenticate method of model in LocalStrategy
+module.exports = () => {
   passport.use(User.createStrategy());
 
-  // use static serialize and deserialize of model for passport session support
   passport.serializeUser(User.serializeUser());
   passport.deserializeUser(User.deserializeUser());
 };
