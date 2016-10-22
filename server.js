@@ -1,6 +1,7 @@
 const express         = require('express');
 const mongoose        = require('mongoose');
 const bodyParser      = require('body-parser');
+const expressSession  = require('express-session');
 const passport        = require('passport');
 const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
@@ -15,7 +16,7 @@ const envConfig = require('./server/env')[env];
 mongoose.connect(envConfig.db);
 
 // PASSPORT CONFIG
-require('./server/passport');
+require('./server/passport')(passport);
 
 // EXPRESS CONFIG
 app.use(bodyParser.json());
@@ -27,10 +28,10 @@ app.use(cookieParser());
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'ejs');
 
-app.use(require('express-session')({
-    secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false
+app.use(expressSession({
+  secret: 'mySecretKey',
+  resave: false,
+  saveUninitialized: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());

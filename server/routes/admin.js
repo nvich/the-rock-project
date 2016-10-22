@@ -5,11 +5,11 @@ const router   = express.Router();
 
 // admin route
 router.get('/admin', (req, res) => {
-  res.render('admin/login');
+  res.redirect('/admin/login');
 });
 
 router.get('/admin/register', (req, res) => {
-  res.render('admin/register', {});
+  res.render('admin/register');
 });
 router.post('/admin/register', (req, res) => {
   User.register(new User({
@@ -29,16 +29,17 @@ router.post('/admin/register', (req, res) => {
   });
 });
 
-router.get('/admin/dashboard', passport.authenticate('local'), (req, res) => {
-  res.render('admin/dashboard', {user: req.user});
+router.get('/admin/dashboard', (req, res) => {
+  res.render('admin/dashboard');
 });
 
 router.get('/admin/login', (req, res) => {
-  res.render('admin/login', { user : req.user });
+  res.render('admin/login');
 });
-router.post('/admin/login', passport.authenticate('local'), (req, res) => {
-  res.redirect('/admin/dashboard');
-});
+router.post('/admin/login', passport.authenticate('local', {
+  successRedirect: '/admin/dashboard',
+  failureRedirect: '/login/error'
+}));
 
 router.get('/admin/logout', (req, res) => {
   req.logout();
