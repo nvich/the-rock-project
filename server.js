@@ -5,6 +5,7 @@ const passport        = require('passport');
 const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
 const cors            = require('cors');
+
 const app             = express();
 
 // ENVIRONMENT CONFIG
@@ -37,7 +38,9 @@ app.use('/static', express.static(__dirname + '/public'));
 
 
 // ROUTES
-require('./server/routes')(app, passport);
+require('./server/routes/index')(app);
+require('./server/routes/admin')(app, passport);
+require('./server/routes/api')(app);
 
 // Start server
 app.listen(envConfig.port, function(){

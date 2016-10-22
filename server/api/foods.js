@@ -20,6 +20,7 @@ module.exports = function(apiRouter){
     food.body = req.body.body;
 
     food.name         = req.body.name;
+    food.amount       = req.body.amount;
     food.protein      = req.body.protein;
     food.carbohydrate = req.body.carbohydrate;
     food.calorie      = req.body.calorie;
@@ -53,6 +54,7 @@ module.exports = function(apiRouter){
         res.send(err);
       }
       food.name         = req.body.name;
+      food.amount       = req.body.amount;
       food.protein      = req.body.protein;
       food.carbohydrate = req.body.carbohydrate;
       food.calorie      = req.body.calorie;
