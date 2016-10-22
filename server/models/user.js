@@ -2,17 +2,16 @@ const mongoose = require('mongoose');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const User = new mongoose.Schema({
-  email: {
-    type: String,
-    required: '{PATH} is required!'
-  }
+  name: { type: String, required: '{PATH} is required!' },
+  email: { type: String, required: '{PATH} is required!' },
+  username: { type: String, required: '{PATH} is required!' },
+  password: { type: String, required: '{PATH} is required!' }
+},
+{
+  collection: 'users',
+  versionKey: false
 });
 
-// Passport-Local-Mongoose will add a username,
-// hash and salt field to store the username,
-// the hashed password and the salt value
+User.plugin(passportLocalMongoose);
 
-// configure to use email for username field
-User.plugin(passportLocalMongoose, { usernameField: 'email' });
-
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('users', User);
