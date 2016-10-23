@@ -1,4 +1,4 @@
-FROM node:6.4.0
+FROM node:6.9.1
 
 ENV HOME=E:/server/github/hemersonvianna/the-rock-project
 
