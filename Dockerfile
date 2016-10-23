@@ -1,6 +1,6 @@
 FROM node:6.9.1
 
-ENV HOME=E:/server/github/hemersonvianna/the-rock-project
+ENV HOME=/app
 
 WORKDIR $HOME
 COPY . $HOME
