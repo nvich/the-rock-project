@@ -7,11 +7,12 @@
     "doc": "doc"
   },
   "scripts": {
-    "build:dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build:dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "test": "",
-    "start:dev": "./node_modules/.bin/nodemon server.js",
-    "start": "node server.js"
+    "prestart": "node copy.js",
+    "start": "node server.js",
+    "start:dev": "./node_modules/.bin/nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -30,12 +31,13 @@
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "express-session": "^1.11.3",
+    "material-design-lite": "^1.2.1",
     "method-override": "^2.3.3",
+    "mongodb": "^2.2.10",
     "mongoose": "^4.0.6",
     "passport": "^0.2.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^1.0.1",
-    "mongodb": "^2.2.10",
     "vue": "^2.0.3"
   },
   "devDependencies": {

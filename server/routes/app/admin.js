@@ -11,6 +11,9 @@ const isAuthenticated = (req, res, next) => {
   }
 }
 
+require('./admin/users')(router);
+require('./admin/foods')(router);
+
 // admin route
 router.get('/admin', isAuthenticated, (req, res) => {
   res.redirect('/admin/dashboard');
@@ -22,11 +25,14 @@ router.post('/admin/login', passport.authenticate('local', {
 }));
 
 router.get('/admin/register', (req, res) => {
-  res.render('admin/register');
+  res.render('admin/register', {title: "Registrar"});
 });
 router.post('/admin/register', (req, res) => {
   User.register(new User({
-    username: req.body.username
+    name: req.body.name,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password
   }), req.body.password, (err, user) => {
     if (err) {
       return res.render('admin/register', { user : user });
@@ -43,21 +49,14 @@ router.post('/admin/register', (req, res) => {
 });
 
 router.get('/admin/dashboard', isAuthenticated, (req, res) => {
-  res.render('admin/dashboard');
+  res.render('admin/dashboard', {title: "Dashboard"});
 });
 router.get('/admin/login', (req, res) => {
-  res.render('admin/login');
+  res.render('admin/login', {title: "Login"});
 });
 router.get('/admin/logout', isAuthenticated, (req, res) => {
   req.logout();
   res.redirect('/admin/login');
-});
-
-router.get('/admin/foods', isAuthenticated, (req, res) => {
-  res.render('admin/foods');
-});
-router.get('/admin/users', isAuthenticated, (req, res) => {
-  res.render('admin/users');
 });
 
 module.exports = router;

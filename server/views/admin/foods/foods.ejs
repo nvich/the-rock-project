@@ -1,0 +1,13 @@
+<% include ../../partials/header.ejs %>
+
+<h1>Comidas</h1>
+
+<ul>
+<% for(var i = 0, len = foods.length; i < len; i++) {%>
+<li>
+  <span><%= foods[i].name %></span>
+</li>
+<% } %>
+</ul>
+
+<% include ../../partials/footer.ejs %>

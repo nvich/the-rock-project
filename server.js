@@ -50,7 +50,7 @@ app.use('/', adminRouter);
 
 app.use((req, res, next) => {
   res.status(404);
-  res.render('404/index');
+  res.render('404/index', {title: '404'});
 });
 
 // Start server

@@ -1,0 +1,43 @@
+<% include ../../partials/header.ejs %>
+
+<form method="post" action="/api/foods">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="name">
+    <label class="mdl-textfield__label">Nome</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="amount">
+    <label class="mdl-textfield__label">Quantidade</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="protein">
+    <label class="mdl-textfield__label">Proteína</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+  <input class="mdl-textfield__input" type="text" name="carbohydrate">
+  <label class="mdl-textfield__label">Carboidrato</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="calorie">
+    <label class="mdl-textfield__label">Calorias</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="fat">
+    <label class="mdl-textfield__label">Gorduras</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="sodium">
+    <label class="mdl-textfield__label">Sódio</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="potassium">
+    <label class="mdl-textfield__label">Potássio</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" name="cholesterol">
+    <label class="mdl-textfield__label">Colesterol</label>
+  </div>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit">Cadastrar</button>
+</form>
+
+<% include ../../partials/footer.ejs %>
