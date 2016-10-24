@@ -11,12 +11,12 @@ const app             = express();
 
 // ENVIRONMENT CONFIG
 const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-const envConfig = require('./server/env')[env];
+const envConfig = require('./server/config/env')[env];
 
 mongoose.connect(envConfig.db);
 
 // PASSPORT CONFIG
-require('./server/passport')(passport);
+require('./server/config/passport')(passport);
 
 // EXPRESS CONFIG
 app.use(bodyParser.json());
@@ -29,18 +29,20 @@ app.set('views', __dirname + '/server/views');
 app.set('view engine', 'ejs');
 
 app.use(expressSession({
-  secret: 'mySecretKey',
+  secret: 'keyboard cat',
+  saveUninitialized: true,
   resave: false,
-  saveUninitialized: false
+  cookie : { httpOnly: true, maxAge: 2419200000 }
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/static', express.static(__dirname + '/public'));
 
 // ROUTES
-const router      = require('./server/routes/index');
-const adminRouter = require('./server/routes/admin');
-const apiRouter   = require('./server/routes/api');
+const router      = require('./server/routes/app/index');
+const adminRouter = require('./server/routes/app/admin');
+const apiRouter   = require('./server/routes/api/api');
 
 app.use('/', router);
 app.use('/api', apiRouter);

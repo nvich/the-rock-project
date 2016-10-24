@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../../models/user');
 
 // Users API
 module.exports = (router) => {

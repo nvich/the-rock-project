@@ -7,9 +7,10 @@
     "doc": "doc"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
+    "build:dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "test": "",
+    "start:dev": "./node_modules/.bin/nodemon server.js",
     "start": "node server.js"
   },
   "repository": {
