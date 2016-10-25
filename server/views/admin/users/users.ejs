@@ -11,10 +11,10 @@
     <span class="mdl-list__item-sub-title"><%= users[i].email %></span>
   </span>
   <span class="mdl-list__item-secondary-content">
-    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">create</i></a>
+    <a class="mdl-list__item-secondary-action" href="/admin/users/<%= users[i]._id %>"><i class="material-icons">create</i></a>
   </span>
   <span class="mdl-list__item-secondary-content">
-    <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">clear</i></a>
+    <a class="mdl-list__item-secondary-action" href="/admin/users/<%= users[i]._id %>"><i class="material-icons">clear</i></a>
   </span>
 </li>
 <% } %>
