@@ -34,7 +34,7 @@ module.exports = (router) => {
         if(err) {
           res.send(err);
         }
-        res.render('admin/users/user', {title: "Usuário", user: user, message: 'User atualizado'});
+        res.render('admin/users/user', {title: "Usuário", user: user, message: 'Usuário atualizado'});
       })
     });
   });
@@ -47,7 +47,7 @@ module.exports = (router) => {
       if(err) {
         res.send(err);
       }
-      res.render('admin/users/user', {title: "Usuário", user: user, message: 'User deletado'});
+      res.render('admin/users/user', {title: "Usuário", user: user, message: 'Usuário deletado'});
     })
   });
 }

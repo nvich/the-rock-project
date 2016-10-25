@@ -5,12 +5,12 @@ module.exports = (router) => {
   // get all foods
   router.get('/admin/foods', (req, res) => {
     Food.find({}, (err, foods) => {
-      res.render('admin/foods/foods', {title: "Comidas", foods: foods});
+      res.render('admin/foods/foods', {title: "Alimentos", foods: foods});
     });
   });
 
   router.get('/admin/foods/cadastre', (req, res) => {
-    res.render('admin/foods/cadastre', {title: "Cadastrar Comida"});
+    res.render('admin/foods/cadastre', {title: "Cadastrar Alimento"});
   });
   router.post('/admin/foods/cadastre', (req, res) => {
     const food = new Food();
@@ -29,7 +29,7 @@ module.exports = (router) => {
       if(err) {
         res.send(err);
       }
-      res.render('admin/foods/cadastre', {title: "Comidas", food: food});
+      res.render('admin/foods/cadastre', {title: "Alimentos", food: food});
     })
   });
 
@@ -39,7 +39,7 @@ module.exports = (router) => {
       if (err) {
         res.send(err);
       }
-      res.render('admin/foods/food', {title: "Comida", food: food});
+      res.render('admin/foods/food', {title: "Alimento", food: food});
     });
   });
 
@@ -63,7 +63,7 @@ module.exports = (router) => {
         if(err) {
           res.send(err);
         }
-        res.render('admin/foods/food', {title: "Comida", user: user, message: 'Food atualizado'});
+        res.render('admin/foods/food', {title: "Alimento", user: user, message: 'Alimento atualizado'});
       })
     });
   });
@@ -76,7 +76,7 @@ module.exports = (router) => {
       if(err) {
         res.send(err);
       }
-      res.render('admin/foods/food', {title: "Comida", user: user, message: 'Food deletado'});
+      res.render('admin/foods/food', {title: "Alimento", user: user, message: 'Alimento deletado'});
     })
   });
 }
