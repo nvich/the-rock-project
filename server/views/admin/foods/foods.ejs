@@ -2,12 +2,44 @@
 
 <h1>Comidas</h1>
 
-<ul>
-<% for(var i = 0, len = foods.length; i < len; i++) {%>
-<li>
-  <span><%= foods[i].name %></span>
-</li>
-<% } %>
-</ul>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Nome</th>
+      <th>Quantidade</th>
+      <th>Calorias</th>
+      <th>Proteína</th>
+      <th>Carboidrato</th>
+      <th>Gorduras</th>
+      <th>Colesterol</th>
+      <th>Sódio</th>
+      <th>Potássio</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for(var i = 0, len = foods.length; i < len; i++) {%>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric"><%= foods[i].name %></td>
+      <td><%= foods[i].amount %></td>
+      <td><%= foods[i].calorie %></td>
+      <td><%= foods[i].protein %></td>
+      <td><%= foods[i].carbohydrate %></td>
+      <td><%= foods[i].fat %></td>
+      <td><%= foods[i].cholesterol %></td>
+      <td><%= foods[i].sodium %></td>
+      <td><%= foods[i].potassium %></td>
+      <td>
+        <span class="mdl-list__item-secondary-content">
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">create</i></a>
+        </span>
+        <span class="mdl-list__item-secondary-content">
+          <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">clear</i></a>
+        </span>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
 
 <% include ../../partials/footer.ejs %>
