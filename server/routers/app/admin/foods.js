@@ -1,82 +1,16 @@
-const Food = require('../../../models/food');
-
-// Foods API
+const foodsController = require('../../../controllers/foods');
+// Foods
 module.exports = (router) => {
   // get all foods
-  router.get('/admin/foods', (req, res) => {
-    Food.find({}, (err, foods) => {
-      res.render('admin/foods/foods', {title: "Alimentos", foods: foods});
-    });
-  });
+  router.get('/admin/foods', foodsController.showFoods);
 
-  router.get('/admin/foods/cadastre', (req, res) => {
-    res.render('admin/foods/cadastre', {title: "Cadastrar Alimento"});
-  });
-  router.post('/admin/foods/cadastre', (req, res) => {
-    const food = new Food();
+  router.get('/admin/foods/cadastre', foodsController.showCadastre);
 
-    food.name         = req.body.name;
-    food.amount       = req.body.amount;
-    food.protein      = req.body.protein;
-    food.carbohydrate = req.body.carbohydrate;
-    food.calorie      = req.body.calorie;
-    food.fat          = req.body.fat;
-    food.sodium       = req.body.sodium;
-    food.potassium    = req.body.potassium;
-    food.cholesterol  = req.body.cholesterol;
-
-    food.save((err, food) => {
-      if(err) {
-        res.send(err);
-      }
-      res.render('admin/foods/cadastre', {title: "Alimentos", food: food});
-    })
-  });
-
+  router.post('/admin/foods/cadastre', foodsController.cadastre);
   // get a single food
-  router.get('/admin/foods/:id', (req, res) => {
-    Food.findById(req.params.id, (err, food) => {
-      if (err) {
-        res.send(err);
-      }
-      res.render('admin/foods/food', {title: "Alimento", food: food});
-    });
-  });
-
+  router.get('/admin/foods/:id', foodsController.showFood);
   // update a food
-  router.put('/admin/foods/:id', (req, res) => {
-    Food.findById(req.params.id, (err, food) => {
-      if(err) {
-        res.send(err);
-      }
-      food.name         = req.body.name;
-      food.amount       = req.body.amount;
-      food.protein      = req.body.protein;
-      food.carbohydrate = req.body.carbohydrate;
-      food.calorie      = req.body.calorie;
-      food.fat          = req.body.fat;
-      food.sodium       = req.body.sodium;
-      food.potassium    = req.body.potassium;
-      food.cholesterol  = req.body.cholesterol;
-
-      food.save((err) => {
-        if(err) {
-          res.send(err);
-        }
-        res.render('admin/foods/food', {title: "Alimento", user: user, message: 'Alimento atualizado'});
-      })
-    });
-  });
-
+  router.put('/admin/foods/:id', foodsController.updateFood);
   // delete a food
-  router.delete('/admin/foods/:id', (req, res) =>{
-    Food.remove({
-      _id: req.params.id
-    }, (err, food) => {
-      if(err) {
-        res.send(err);
-      }
-      res.render('admin/foods/food', {title: "Alimento", user: user, message: 'Alimento deletado'});
-    })
-  });
+  router.delete('/admin/foods/:id', foodsController.deleteFood);
 }

@@ -1,5 +1,5 @@
 const usersController = require('../../../controllers/users');
-// UserModels
+// Users
 module.exports = (router) => {
   // get all users
   router.get('/admin/users', usersController.showUsers);
