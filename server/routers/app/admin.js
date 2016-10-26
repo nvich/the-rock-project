@@ -2,17 +2,10 @@ const express  = require('express');
 const passport = require('passport');
 const User     = require('../../models/user');
 const router   = express.Router();
+const isAuthenticated = require('../../middlewares/authorization').isAuthenticated;
 
-const isAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated()){
-    return next();
-  } else {
-    res.redirect('/admin/login');
-  }
-}
-
-require('./admin/users')(router);
-require('./admin/foods')(router);
+require('./admin/users')(router, isAuthenticated);
+require('./admin/foods')(router, isAuthenticated);
 
 // admin route
 router.get('/admin', isAuthenticated, (req, res) => {

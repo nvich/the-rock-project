@@ -1,8 +1,8 @@
 const foodsController = require('../../../controllers/foods');
 // Foods
-module.exports = (router) => {
+module.exports = (router, isAuthenticated) => {
   // get all foods
-  router.get('/admin/foods', foodsController.showFoods);
+  router.get('/admin/foods', isAuthenticated, foodsController.showFoods);
 
   router.get('/admin/foods/cadastre', foodsController.showCadastre);
 

@@ -1,8 +1,8 @@
 const usersController = require('../../../controllers/users');
 // Users
-module.exports = (router) => {
+module.exports = (router, isAuthenticated) => {
   // get all users
-  router.get('/admin/users', usersController.showUsers);
+  router.get('/admin/users', isAuthenticated, usersController.showUsers);
 
   // get a single user
   router.get('/admin/users/:id', usersController.showUser);

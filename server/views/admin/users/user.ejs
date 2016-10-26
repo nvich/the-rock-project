@@ -8,20 +8,20 @@
     </div>
     <form method="post" action="/admin/users/<%= user._id %>">
       <div class="mdl-card__supporting-text">
-        <div class="mdl-textfield mdl-js-textfield">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" name="name" value="<%= user.name %>">
           <label class="mdl-textfield__label">Nome</label>
         </div>
-        <div class="mdl-textfield mdl-js-textfield">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" name="email" value="<%= user.email %>">
           <label class="mdl-textfield__label">E-mail</label>
         </div>
-        <div class="mdl-textfield mdl-js-textfield">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" name="username" value="<%= user.username %>">
           <label class="mdl-textfield__label">Nome de usuário</label>
         </div>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" name="password" value="<%= user.password %>">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" name="password" value="<%= user.password %>">
           <label class="mdl-textfield__label">Senha</label>
         </div>
       </div>
