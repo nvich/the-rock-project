@@ -14,7 +14,8 @@ router.get('/admin', isAuthenticated, (req, res) => {
 
 router.post('/admin/login', passport.authenticate('local', {
   successRedirect: '/admin/dashboard',
-  failureRedirect: '/admin/login'
+  failureRedirect: '/admin/login',
+  failureFlash: true
 }));
 
 router.get('/admin/register', (req, res) => {
@@ -45,7 +46,7 @@ router.get('/admin/dashboard', isAuthenticated, (req, res) => {
   res.render('admin/dashboard', {title: "Dashboard"});
 });
 router.get('/admin/login', (req, res) => {
-  res.render('admin/login', {title: "Login"});
+  res.render('admin/login', {title: "Login", message: req.flash('loginMessage') });
 });
 router.get('/admin/logout', isAuthenticated, (req, res) => {
   req.logout();

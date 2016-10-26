@@ -5,6 +5,7 @@ const bodyParser      = require('body-parser');
 const cookieParser    = require('cookie-parser');
 const methodOverride  = require('method-override');
 const cors            = require('cors');
+const flash           = require('connect-flash');
 
 module.exports = (app, envConfig, passport) => {
   app.set('views', './server/views');
@@ -32,4 +33,6 @@ module.exports = (app, envConfig, passport) => {
   //use passport session
   app.use(passport.initialize());
   app.use(passport.session());
+
+  app.use(flash());
 };
