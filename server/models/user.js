@@ -21,8 +21,13 @@ userSchema.methods.generateHash = function(password) {
 };
 
 // checking if password is valid
+// userSchema.methods.validPassword = function(password) {
+//   return bcrypt.compareSync(password, this.password);
+// };
+
+// Para testar local
 userSchema.methods.validPassword = function(password) {
-  return bcrypt.compareSync(password, this.password);
+  return true;
 };
 
 module.exports = mongoose.model('users', userSchema);

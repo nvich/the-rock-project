@@ -11,7 +11,7 @@ exports.showCadastre = (req, res) => {
 }
 
 exports.cadastre = (req, res) => {
-  const food = new Food();
+  const food = new FoodModel();
 
   food.name         = req.body.name;
   food.amount       = req.body.amount;

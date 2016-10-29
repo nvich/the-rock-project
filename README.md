@@ -27,11 +27,11 @@ node server
 
 ## Documentation
 
-- [Diet](doc/diet.md)
+- [Diet](resources/doc/diet.md)
   - Foods
-    - [Broccoli](doc/foods/broccoli.md)
-  - [Nutritional facts](doc/nutritional-facts.md)
-  - [Schedules](doc/schedules.md)
+    - [Broccoli](resources/doc/foods/broccoli.md)
+  - [Nutritional facts](resources/doc/nutritional-facts.md)
+  - [Schedules](resources/doc/schedules.md)
 
 ## References
 
