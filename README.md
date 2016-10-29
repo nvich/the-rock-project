@@ -18,6 +18,7 @@ mongod
 ```bash 
 mongo 
 mongoimport --db the-rock --collection foods --file ./data/the-rock/foods.json
+mongoimport --db the-rock --collection users --file ./data/the-rock/users.json
 ```
 
 ```bash
@@ -36,6 +37,11 @@ node server
 
 - [FatSecret Brasil](http://www.fatsecret.com.br/calorias-nutri%C3%A7%C3%A3o)
 - [Dietas e Estilo de Vida - WikiHow](http://pt.wikihow.com/Categoria:Dietas-e-Estilo-de-Vida) 
+
+## Utils
+
+- [MDL](https://getmdl.io/)
+
 
 ## Contributing
 
