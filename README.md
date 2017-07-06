@@ -16,9 +16,8 @@ mongod
 ```
 
 ```bash 
-mongo 
-mongoimport --db the-rock --collection foods --file ./data/the-rock/foods.json
-mongoimport --db the-rock --collection users --file ./data/the-rock/users.json
+mongoimport --db the-rock --collection foods --file ./resources/data/the-rock/foods.json
+mongoimport --db the-rock --collection users --file ./resources/data/the-rock/users.json
 ```
 
 ```bash
