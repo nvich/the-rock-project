@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './assets/js/main.js',
+  entry: './client/js/main.js',
   output: {
     path: path.resolve(__dirname, './public'),
     publicPath: '/public/',
