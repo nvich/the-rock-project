@@ -4,8 +4,7 @@ const passport  = require('passport');
 const app       = express();
 
 // ENVIRONMENT CONFIG
-const env       = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-const envConfig = require('./server/config/env')[env];
+const envConfig = require('./server/config/env');
 
 mongoose.connect(envConfig.db);
 

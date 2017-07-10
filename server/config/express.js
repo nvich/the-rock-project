@@ -20,7 +20,7 @@ module.exports = (app, envConfig, passport) => {
 
   //express/mongo session storage
   app.use(session({
-      secret: 'theRock',
+      secret: envConfig.sessionSecret,
       resave: false,
       saveUninitialized: true,
       cookie : { httpOnly: true, maxAge: 2419200000 },
