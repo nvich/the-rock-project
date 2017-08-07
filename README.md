@@ -1,7 +1,7 @@
 # the Rock Project
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
-[![issues](https://img.shields.io/github/issues/hemersonvianna/the-rock-project.svg?style=flat-square)](https://github.com/hemersonvianna/the-rock-project/issues)
+[![issues](https://img.shields.io/github/issues/descco-group/the-rock-project.svg?style=flat-square)](https://github.com/descco-group/the-rock-project/issues)
 
 ## Install
 
@@ -52,7 +52,7 @@ node server
 
 ## Log
 
-Check [Releases](https://github.com/hemersonvianna/the-rock-project/releases) for detailed changelog.
+Check [Releases](https://github.com/descco-group/the-rock-project/releases) for detailed changelog.
 
 ## License
 
