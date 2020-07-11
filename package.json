@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/descco-tools/system-the-rock-project.git"
+    "url": "git+https://github.com/nvich/the-rock-project.git"
   },
-  "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (http://descco.com.br)",
+  "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (http://nerdcalistenico.com.br)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/descco-tools/system-the-rock-project/issues"
+    "url": "https://github.com/nvich/the-rock-project/issues"
   },
-  "homepage": "https://github.com/descco-tools/system-the-rock-project#readme",
+  "homepage": "https://github.com/nvich/the-rock-project#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "1.15.2",
